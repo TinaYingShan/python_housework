@@ -1,9 +1,12 @@
-from urllib import parse,request
-import html
+from urllib import request
 import re
-import json
+import socket
+import postgresql
 
-def get_modile_region(mobile) :
+socket.setdefaulttimeout(5)
+
+
+def get_mobile_region(mobile) :
     header_dict = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko',
     }
@@ -16,15 +19,42 @@ def get_modile_region(mobile) :
     match = re.findall(r'<[Tt][Dd][^</>]*>卡号归属地</[Tt][Dd]>.*?<[Tt][Dd][^</>]+?>(<!-- <td></td> -->)?(?P<region>[^卡号归属地]+?)</[Tt][Dd]>', t)
     return match[0][1]
 
-data = json.load(open('mobile_0.json','r',encoding='utf-8'))
+# data = json.load(open('mobile_0.json','r',encoding='utf-8'))
+# total = data['data'].__len__()
+# count = 0
+# for item in data['data']:
+#     try:
+#         region = get_modile_region(item['CELL_PHONE_NUMBER'])
+#         spilt = region.split(' ')
+#         item['province_mobile'] = spilt[0]
+#         item['city_mobile'] = spilt[0] if spilt[1] == '' else spilt[1]
+#         count += 1
+#         print(item)
+#         print('完成:(%d/%d)'% (count, total))
+#     except Exception as e:
+#         print('获取归属地失败.')
+#         print(e)
 
-for item in data['data']:
-    region = get_modile_region(item['CELL_PHONE_NUMBER'])
-    spilt = region.split(' ')
-    item['province_mobile'] = spilt[0]
-    item['city_mobile'] = spilt[0] if spilt[1] == '' else spilt[1]
-    print(item)
 
-json.dump(data, open('mobile_output.json','w',encoding='utf-8'))
+db = postgresql.open('pq://root:123456@localhost:5432/ddqc')
+
+
+rows = db.prepare('select distinct "CELL_PHONE_NUMBER" from ddqc_data."TMP_STATE_CHARGING" where "CELL_PHONE_NUMBER" is not null and city_mobile is null')()
+
+for row in rows:
+    try:
+        phone = row[0]
+        region = get_mobile_region(phone)
+        spilt = region.split(' ')
+        province_mobile = spilt[0]
+        city_mobile = spilt[0] if spilt[1] == '' else spilt[1]
+        sql = "update ddqc_data.\"TMP_STATE_CHARGING\" set province_mobile='%s', city_mobile='%s' where \"CELL_PHONE_NUMBER\" ='%s'" % (province_mobile,city_mobile,phone)
+        db.execute(sql)
+        print(phone)
+    except Exception as e:
+        print(e)
+
+# json.dump(data, open('mobile_output.json','w',encoding='utf-8'))
 # v = get_modile_region('1371206')
-print(data)
+# print(data)
+print('complete!')

@@ -1,0 +1,120 @@
+Last login: Sun Oct  7 12:59:09 on ttys003
+ tina@Yingshanyuans-MacBook-Pro  ~  docker stop b4cf4aa22aaf
+Error response from daemon: No such container: b4cf4aa22aaf
+ ✘ tina@Yingshanyuans-MacBook-Pro  ~  docker ps
+CONTAINER ID        IMAGE               COMMAND               CREATED             STATUS              PORTS                    NAMES
+316722f946d3        e2110370c9c0        "/app/DataExplorer"   31 minutes ago      Up 31 minutes       0.0.0.0:8000->8000/tcp   loving_fermi
+ tina@Yingshanyuans-MacBook-Pro  ~  docker stop 316722f946d3
+316722f946d3
+ tina@Yingshanyuans-MacBook-Pro  ~  docker run -it -p 8000:8000 --privileged=true -w /root -v $(pwd):/root  e2110370c9c0
+Application startup exception: System.TimeoutException: The operation has timed out.
+   at Npgsql.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.NpgsqlConnector.RawOpen(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<>c__DisplayClass32_0.<<Open>g__OpenLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnection.Open()
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.HistoryRepository.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at DataExplorer.Server.Startup.Configure(IApplicationBuilder app, IServiceProvider serviceProvider, IHostingEnvironment env) in /repo/server/server/DataExplorer.Server/Startup.cs:line 196
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-10-07 05:52:45 Debug init main
+2018-10-07 05:52:46 Info User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2018-10-07 05:52:46 Info Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: MigrationsHistoryTable=auth.__EFMigrationsHistory
+2018-10-07 05:53:02 Fatal Application startup exception
+Application startup exception: System.TimeoutException: The operation has timed out.
+   at Npgsql.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.NpgsqlConnector.RawOpen(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<>c__DisplayClass32_0.<<Open>g__OpenLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnection.Open()
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.HistoryRepository.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at DataExplorer.Server.Startup.Configure(IApplicationBuilder app, IServiceProvider serviceProvider, IHostingEnvironment env) in /repo/server/server/DataExplorer.Server/Startup.cs:line 196
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-10-07 05:53:02 Debug init main
+2018-10-07 05:53:02 Info User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2018-10-07 05:53:03 Info Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: MigrationsHistoryTable=auth.__EFMigrationsHistory
+2018-10-07 05:53:18 Fatal Application startup exception
+Application startup exception: System.TimeoutException: The operation has timed out.
+   at Npgsql.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.NpgsqlConnector.RawOpen(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<>c__DisplayClass32_0.<<Open>g__OpenLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnection.Open()
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.HistoryRepository.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at DataExplorer.Server.Startup.Configure(IApplicationBuilder app, IServiceProvider serviceProvider, IHostingEnvironment env) in /repo/server/server/DataExplorer.Server/Startup.cs:line 196
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-10-07 05:53:19 Debug init main
+2018-10-07 05:53:19 Info User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2018-10-07 05:53:20 Info Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: MigrationsHistoryTable=auth.__EFMigrationsHistory
+2018-10-07 05:53:35 Fatal Application startup exception
+Application startup exception: System.TimeoutException: The operation has timed out.
+   at Npgsql.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.NpgsqlConnector.RawOpen(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<>c__DisplayClass32_0.<<Open>g__OpenLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnection.Open()
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.HistoryRepository.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at DataExplorer.Server.Startup.Configure(IApplicationBuilder app, IServiceProvider serviceProvider, IHostingEnvironment env) in /repo/server/server/DataExplorer.Server/Startup.cs:line 196
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-10-07 05:53:35 Debug init main
+2018-10-07 05:53:36 Info User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2018-10-07 05:53:37 Info Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: MigrationsHistoryTable=auth.__EFMigrationsHistory
+2018-10-07 05:53:52 Fatal Application startup exception
+Application startup exception: System.TimeoutException: The operation has timed out.
+   at Npgsql.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.NpgsqlConnector.RawOpen(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<>c__DisplayClass32_0.<<Open>g__OpenLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnection.Open()
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.HistoryRepository.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at DataExplorer.Server.Startup.Configure(IApplicationBuilder app, IServiceProvider serviceProvider, IHostingEnvironment env) in /repo/server/server/DataExplorer.Server/Startup.cs:line 196
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-10-07 05:53:52 Debug init main
+2018-10-07 05:53:52 Info User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2018-10-07 05:53:53 Info Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: MigrationsHistoryTable=auth.__EFMigrationsHistory
+2018-10-07 05:54:08 Fatal Application startup exception
+Application startup exception: System.TimeoutException: The operation has timed out.
+   at Npgsql.NpgsqlConnector.Connect(NpgsqlTimeout timeout)
+   at Npgsql.NpgsqlConnector.RawOpen(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<>c__DisplayClass32_0.<<Open>g__OpenLong|0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Npgsql.NpgsqlConnection.Open()
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.HistoryRepository.Exists()
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.Migrate(String targetMigration)
+   at DataExplorer.Server.Startup.Configure(IApplicationBuilder app, IServiceProvider serviceProvider, IHostingEnvironment env) in /repo/server/server/DataExplorer.Server/Startup.cs:line 196
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2018-10-07 05:54:09 Debug init main
+2018-10-07 05:54:09 Info User profile is available. Using '/root/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2018-10-07 05:54:10 Info Entity Framework Core 2.1.2-rtm-30932 initialized 'ApplicationDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: MigrationsHistoryTable=auth.__EFMigrationsHistory
+2018-10-07 05:54:25 Fatal Application startup exception
+2018-10-07 05:52:45 Debug init main
+2018-10-07 05:52:45 Info Data Explorer Service Unix 4.9.93.0
+ tina@Yingshanyuans-MacBook-Pro  ~  >....

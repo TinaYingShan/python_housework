@@ -1,6 +1,7 @@
 #! /usr/local/bin/python3
 import json
-from urllib import parse,request
+from urllib import request
+
 
 def abc(month) :
     header_dict = {
