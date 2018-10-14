@@ -59,17 +59,25 @@ def check():
     print('检查天气')
     global last_weather
     global timer
-    weather_info = get_weather_info('101210101')
-    city = weather_info['cityname']
-    weather: str = weather_info['weather']
-    msg = '%s的天气: %s' % (city, weather)
-    if weather != last_weather:
-        print(msg)
-        if weather.find('雨') > 0:
-            if last_weather is None or last_weather.find('雨') == -1:
-                send_notification('颖珊,下雨了记得带伞', msg)
-        send_notification('颖珊天气有变=>%s' % msg, msg)
-        last_weather = weather
+    # noinspection PyBroadException
+    try:
+        weather_info = get_weather_info('101210101')
+        city = weather_info['cityname']
+        weather: str = weather_info['weather']
+        min_temp = weather_info['temp']
+        max_temp = weather_info['tempn']
+        wind = weather_info['wd']
+        msg = '%s的天气: %s %s %s~%s' % (city, weather, wind, min_temp, max_temp)
+        if weather != last_weather:
+            print(msg)
+            if weather.find('雨') > 0:
+                if last_weather is None or last_weather.find('雨') == -1:
+                    send_notification('颖珊,下雨了记得带伞', msg)
+            send_notification('颖珊天气有变=>%s' % msg, msg)
+            last_weather = weather
+    except:
+        pass
+
     timer = threading.Timer(60, check)
     timer.start()
 
