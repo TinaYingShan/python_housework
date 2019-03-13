@@ -1,0 +1,97 @@
+[
+  {
+    "date": "20180101",
+    "state": 2,
+    "week_day": "星期一"
+  },
+  {
+    "date": "20180102",
+    "state": 0,
+    "week_day": "星期二"
+  },
+  {
+    "date": "20180103",
+    "state": 0,
+    "week_day": "星期三"
+  },
+  {
+    "date": "20180104",
+    "state": 0,
+    "week_day": "星期四"
+  },
+  {
+    "date": "20180105",
+    "state": 0,
+    "week_day": "星期五"
+  },
+  {
+    "date": "20180106",
+    "state": 1,
+    "week_day": "星期六"
+  },
+  {
+    "date": "20180107",
+    "state": 1,
+    "week_day": "星期天"
+  },
+  {
+    "date": "20180108",
+    "state": 0,
+    "week_day": "星期一"
+  },
+  {
+    "date": "20180109",
+    "state": 0,
+    "week_day": "星期二"
+  },
+  {
+    "date": "20180110",
+    "state": 0,
+    "week_day": "星期三"
+  },
+  {
+    "date": "20180111",
+    "state": 0,
+    "week_day": "星期四"
+  },
+  {
+    "date": "20180112",
+    "state": 0,
+    "week_day": "星期五"
+  },
+  {
+    "date": "20180113",
+    "state": 1,
+    "week_day": "星期六"
+  },
+  {
+    "date": "20180114",
+    "state": 1,
+    "week_day": "星期天"
+  },
+  {
+    "date": "20180115",
+    "state": 0,
+    "week_day": "星期一"
+  },
+  {
+    "date": "20180116",
+    "state": 0,
+    "week_day": "星期二"
+  },
+  {
+    "date": "20180117",
+    "state": 0,
+    "week_day": "星期三"
+  },
+  {
+    "date": "20180118",
+    "state": 0,
+    "week_day": "星期四"
+  },
+  {
+    "date": "20180119",
+    "state": 0,
+    "week_day": "星期五"
+  }
+]
